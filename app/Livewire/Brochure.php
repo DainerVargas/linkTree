@@ -22,7 +22,8 @@ class Brochure extends Component
 
     public function close()
     {
-        $this->view = false;
+        /* $this->view = false; */
+        return redirect()->route('home');
     }
 
     public function render()

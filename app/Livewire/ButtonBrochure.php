@@ -6,14 +6,18 @@ use Livewire\Component;
 
 class ButtonBrochure extends Component
 {
-    public $view = false;
+    public $view = '', $section = 0;
 
     public function show()
     {
-        $this->view = true;
-        $this->dispatch('view', $this->view);
+        return redirect()->route('brochure');
     }
-
+    
+    public function show_section($section){
+        
+        $this->section = $section;
+        $this->dispatch('section', $this->section);
+   } 
 
 
     public function render()

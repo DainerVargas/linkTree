@@ -10,94 +10,54 @@
 
     @vite('resources/scss/app.scss')
 
-    <title>LinkTree</title>
+    <title>Blue Eyes</title>
 </head>
 
 <body>
     <main class="main">
         <section class="profile">
-            <div class="conte_menu">
-                <div class="menu">
-                    <span class="material-symbols-outlined">
-                        more_vert
-                    </span>
-                </div>
-            </div>
-
             <div class="container">
-                <img class="logo" src="{{ asset('images/Logo.png') }}" alt="">
+                {{--  <img class="logo" src="{{ asset('images/Logo Beit.png') }}" alt=""> --}}
+                <img class="logo" src="{{ asset('images/Logo  Beit.svg') }}" alt="">
 
-                <h3 class="email">
-                    <span>@</span><span>I</span><span>n</span><span>v</span><span>e</span><span>r</span><span>s</span><span>i</span><span>o</span><span>n</span><span>e</span><span>s</span><span>_</span><span>A</span><span>l</span><span>i</span><span>a</span><span>t</span><span>h</span>
-                </h3>
+                {{--  <h3 class="email">
+                    <span>@</span><span>B</span><span>L</span><span>U</span><span>E</span><span>_</span><span>E</span><span>Y</span><span>E</span><span>S</span><span>_</span><span>I</span><span>T</span>
+                </h3> --}}
 
 
                 <div class="links">
-                    <a href="https://www.instagram.com/inversionesaliath/" target="_blank"> <img
-                            src="{{ asset('iconos/Instagram.png') }}" alt=""> <span>Instagram</span>
+                    <a href="https://www.tiktok.com/@beit_peru?_t=ZM-8xGmzmIUXkW&_r=1" target="_blank"> <img
+                            src="{{ asset('iconos/Tiktok.png') }}" alt=""> <span>Tiktok</span>
                     </a>
-                    <a href="https://www.facebook.com/inversionesaliath/?locale=es_LA" target="_blank"> <img
-                            src="{{ asset('iconos/facebook.png') }}" alt=""> <span>facebook</span>
+                    <a href="https://www.facebook.com/beitperu?mibextid=wwXIfr&mibextid=wwXIfr" target="_blank">
+                        <img src="{{ asset('iconos/facebook.png') }}" alt=""> <span>Facebook</span>
                     </a>
-                    <a href="https://www.tiktok.com/@inversionesaliath" target="_blank">
-                        <img src="{{ asset('iconos/whatsapp.png') }}" alt=""> <span>whatsapp</span>
+                    <a href="https://www.instagram.com/beit_peru?igsh=bXl1eTJldDJkbjdw&utm_source=qr" target="_blank">
+                        <img src="{{ asset('iconos/Instagram.png') }}" alt=""> <span>Instagram</span>
                     </a>
-                    <a href="https://www.youtube.com/@inversionesaliath" target="_blank">
+                    <a href="https://youtube.com/@blueeyesinnovationtech-mj6ne?si=dYhX222vCPxFpBk5" target="_blank">
                         <img src="{{ asset('iconos/youtube.png') }}" alt="">
                         <span>Youtube</span>
+                    </a>
+                    <a href="https://www.linkedin.com/company/blue-eyes-innovation-tech" target="_blank">
+                        <img src="{{ asset('iconos/linkedin.png') }}" alt=""> <span>Linkedin</span>
                     </a>
                 </div>
             </div>
 
-            <div class="information">
-                <p id="text">Conoce más sobre nosotros</p>
-
-                @livewire('button-brochure')
-            </div>
-
-            <div class="contact container_buttons">
-                <p id="text">Contáctanos</p>
-                <button id="btn"><span></span> Déjanos un mensaje<span class="material-symbols-outlined point">
-                        more_vert
-                    </span></button>
-            </div>
+            @livewire('button-brochure')
 
         </section>
 
-        @livewire('brochure')
+        @yield('brochure')
+
         @livewire('share-link')
 
+        <footer>
+            © Todos los derechos reservados Hecho por Beit Perú
+        </footer>
     </main>
-
     @livewireScripts
-    <script src="/vendor/dearflip/js/libs/jquery.min.js"></script>
-    <script src="/vendor/dearflip/js/dflip.min.js"></script>
-
-    <script>
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                const $container = $("#flipbookPDFContainer");
-
-                if ($container != null) {
-                    try {
-                        $container.flipBook("/Document/BrochureBEIT2025.pdf", {
-                            webgl: true,
-                            showCover: true,
-                            showTurnPage: true,
-                            pageBackground: "#fff",
-                            autoPlay: true,
-                            responsive: true,
-                        });
-                        console.log("Flipbook inicializado con éxito");
-                    } catch (e) {
-                        console.error("Error al inicializar flipbook:", e);
-                    }
-                } else {
-                    console.warn("Contenedor no disponible o ya inicializado");
-                }
-            }, 500);
-        });
-    </script>
 </body>
 
 </html>

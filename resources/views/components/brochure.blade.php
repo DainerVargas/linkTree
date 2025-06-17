@@ -2,5 +2,7 @@
 @section('title', 'Brochure')
 
 @section('brochure')
-    @livewire('brochure')
+    <section class="brochure">
+        @livewire('brochure')
+    </section>
 @endsection

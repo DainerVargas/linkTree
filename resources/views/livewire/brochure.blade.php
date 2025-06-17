@@ -14,8 +14,8 @@
         }
 
         #container {
-            width: 40vw;
-            height: 80vh;
+            width: 65%;
+            height: 90vh;
             background-color: #fff;
             border-radius: 10px;
             display: flex;
@@ -75,25 +75,59 @@
         }
     </style>
 
-    @if ($view)
+    @if (true)
         <section class="brochure">
             <section id="brochure">
                 <div id="container">
                     <div class="head_brocure">
-                        <span class="material-symbols-outlined">
-                            ios_share
+                        <span>
                         </span>
                         <h3>Brochure corporativo Aliath</h3>
                         <span wire:click="close" class="material-symbols-outlined close-btn">
                             close
                         </span>
                     </div>
-                    <div id="flipbookPDFContainer">l</div>
+                    <div id="flipbookPDFContainer"></div>
                     <a class="link_pdf" target="_blank" href="Document/BrochureBEIT2025.pdf">
                         <button class="btn_view">View</button>
                     </a>
                 </div>
             </section>
         </section>
+
+        @livewireScripts
+        <script src="/vendor/dearflip/js/libs/jquery.min.js"></script>
+        <script src="/vendor/dearflip/js/dflip.min.js"></script>
+
+        <script>
+            window.addEventListener('load', function() {
+                setTimeout(() => {
+                    const $container = $("#flipbookPDFContainer");
+
+                    if ($container != null) {
+                        try {
+                            $container.flipBook("/Document/BrochureBEIT2025.pdf", {
+                                webgl: true,
+                                pageSize: {
+                                    width: '100%', // Establece el ancho en píxeles
+                                    height: '100%' // Establece la altura en píxeles
+                                },
+                                showCover: true,
+                                showTurnPage: true,
+                                pageBackground: "#fff",
+                                autoPlay: true,
+                                responsive: true,
+                            });
+                            console.log("Flipbook inicializado con éxito");
+                        } catch (e) {
+                            console.error("Error al inicializar flipbook:", e);
+                        }
+                    } else {
+                        console.warn("Contenedor no disponible o ya inicializado");
+                    }
+                }, 500);
+            });
+        </script>
     @endif
+
 </section>

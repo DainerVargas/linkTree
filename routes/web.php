@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('components.brochure');
+    return view('welcome');
 })->name('home');
 
+
+Route::get('/brochure', function () {
+    return view('components.brochure');
+})->name('brochure');
