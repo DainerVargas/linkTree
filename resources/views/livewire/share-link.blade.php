@@ -10,7 +10,7 @@
                     </span>
                 </div>
                 @if ($section == 1)
-                    <h2>Brochure corporativo Aliath</h2>
+                    <h2>Blue Eyes Innovation Tech</h2>
                 @elseif($section == 2)
                     <a href="https://beitperu.com/">
                         <div class="conte_about">

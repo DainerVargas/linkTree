@@ -30,4 +30,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function businesses()
+    {
+        return $this->hasMany(Business::class);
+    }
 }

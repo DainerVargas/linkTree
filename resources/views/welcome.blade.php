@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <link rel="stylesheet" href="scss\app.scss">
+
     @vite('resources/scss/app.scss')
 
     <title>Blue Eyes</title>
@@ -15,15 +17,24 @@
 
 <body>
     <main class="main">
+        <div class="conte_config">
+            <span class="material-symbols-outlined icono-config" id="toggleLogin">settings</span>
+
+            <div class="conte_login" id="loginCard">
+                <a href="{{route('login')}}">
+                    <span class="material-symbols-outlined">login</span>
+                    Iniciar sesión
+                </a>
+                <div class="conte_create">
+                    <small>¿Deseas crear una cuenta?</small>
+                    <a href="https://wa.me/message/ZXQJS5VVBXFXP1">Contactarme</a>
+                </div>
+            </div>
+        </div>
+
         <section class="profile">
             <div class="container">
-                {{--  <img class="logo" src="{{ asset('images/Logo Beit.png') }}" alt=""> --}}
                 <img class="logo" src="{{ asset('images/Logo  Beit.svg') }}" alt="">
-
-                {{--  <h3 class="email">
-                    <span>@</span><span>B</span><span>L</span><span>U</span><span>E</span><span>_</span><span>E</span><span>Y</span><span>E</span><span>S</span><span>_</span><span>I</span><span>T</span>
-                </h3> --}}
-
 
                 <div class="links">
                     <a href="https://www.tiktok.com/@beit_peru?_t=ZM-8xGmzmIUXkW&_r=1" target="_blank"> <img
@@ -58,6 +69,18 @@
         </footer>
     </main>
     @livewireScripts
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggleBtn = document.getElementById("toggleLogin");
+            const loginCard = document.getElementById("loginCard");
+
+            toggleBtn.addEventListener("click", () => {
+                loginCard.classList.toggle("show");
+            });
+        });
+    </script>
+
 </body>
 
 </html>

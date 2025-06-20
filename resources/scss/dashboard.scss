@@ -1,0 +1,124 @@
+@use 'variables';
+
+/* .active{
+    background-color: black;
+    color: white;
+} */
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header {
+    width: 100vw;
+    /* height: 65px; */
+    height: 11vh;
+    @include variables.flex(space-between);
+    background-color: #1f1f1f;
+    padding: 0 10px 0 40px;
+    box-sizing: border-box;
+
+    .nameBusiness {
+        color: #e1e1e1;
+        letter-spacing: 1px;
+    }
+
+    .conte_business {
+        @include variables.flex(end);
+        gap: 10px;
+
+        .logo {
+            height: 50px;
+        }
+
+        h3 {
+            color: #e1e1e1;
+        }
+    }
+
+}
+
+main {
+    @include variables.flex(space-between);
+    height: 89vh;
+
+    .conte_menu {
+        @include variables.flex(space-between);
+        flex-direction: column;
+        background-color: #1f1f1f;
+        padding: 20px 10px 10px 10px;
+        box-sizing: border-box;
+        width: 18%;
+        min-width: 180px;
+        height: 100%;
+
+        .menu {
+            @include variables.flex(center);
+            flex-direction: column;
+            gap: 30px;
+            width: 100%;
+
+            .list {
+                width: 100%;
+                flex-direction: column;
+                list-style: none;
+                gap: 15px;
+                @include variables.align(start, start);
+
+                a {
+                    text-decoration: none;
+                    color: #bdbdbd;
+                    width: 100%;
+                    @include variables.align(center, start);
+                    gap: 5px;
+
+                    li {
+                        transition: all 0.2s ease;
+                        padding: 7px;
+                        width: 100%;
+                        box-sizing: border-box;
+                        border-radius: 7px;
+                        font-weight: 600;
+                    }
+
+                    .active {
+                        background-color: #363636;
+
+                    }
+                }
+
+                a:hover {
+                    li {
+                        background-color: #363636;
+                    }
+                }
+
+                .logout {
+                    li {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        .privacy {
+            color: #bdbdbd;
+            font-size: 11px;
+        }
+    }
+
+    .sections {
+        width: 82%;
+        height: 100%;
+        background-color: #3a1e1e;
+        overflow: hidden;
+
+        #main {
+            overflow-y: scroll;
+            overflow-x: scroll;
+            height: 100%;
+        }
+    }
+}
