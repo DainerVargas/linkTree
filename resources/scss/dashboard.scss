@@ -1,10 +1,5 @@
 @use 'variables';
 
-/* .active{
-    background-color: black;
-    color: white;
-} */
-
 * {
     padding: 0;
     margin: 0;
@@ -119,6 +114,226 @@ main {
             overflow-y: scroll;
             overflow-x: scroll;
             height: 100%;
+
+            .conte_form {
+                @include variables.flex(center);
+                width: 100%;
+
+                .form {
+                    @include variables.flex(center);
+                    flex-direction: column;
+                    gap: 30px;
+                    width: 50%;
+                    min-width: 345px;
+                    padding: 20px;
+                    box-sizing: border-box;
+                    border-radius: 20px;
+                    position: relative;
+                    background-color: #1a1a1a;
+                    color: #fff;
+                    border: 1px solid #333;
+
+                    .flex {
+                        @include variables.flex(space-between);
+                        width: 100%;
+                        min-width: 290px;
+                        flex-wrap: wrap;
+                        gap: 10px;
+                    }
+
+                    @media (max-width: 1160px) {
+                        .flex {
+                            @include variables.flex(center);
+                        }
+                    }
+                }
+
+                .title {
+                    font-size: 28px;
+                    font-weight: 600;
+                    letter-spacing: -1px;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    padding-left: 30px;
+                    color: #1DCAF2;
+                }
+
+                .message,
+                .signin {
+                    font-size: 14.5px;
+                    color: rgba(255, 255, 255, 0.7);
+                }
+
+                .signin {
+                    text-align: center;
+                }
+
+                .signin a:hover {
+                    text-decoration: underline royalblue;
+                }
+
+                .signin a {
+                    color: #1DCAF2;
+                }
+
+                .flex {
+                    display: flex;
+                    width: 100%;
+                    gap: 6px;
+                }
+
+                .form label {
+                    position: relative;
+                }
+
+                .form label .input {
+                    background-color: #333;
+                    color: #fff;
+                    width: 100%;
+                    padding: 20px 05px 05px 10px;
+                    outline: 0;
+                    border: 1px solid rgba(105, 105, 105, 0.397);
+                    border-radius: 10px;
+                }
+
+                .form label .input+span {
+                    color: rgba(255, 255, 255, 0.5);
+                    position: absolute;
+                    left: 10px;
+                    top: 0px;
+                    font-size: 0.9em;
+                    cursor: text;
+                    transition: 0.3s ease;
+                }
+
+                .form label .input:placeholder-shown+span {
+                    top: 12.5px;
+                    font-size: 0.9em;
+                }
+
+                .form label .input:focus+span,
+                .form label .input:valid+span {
+                    color: #1DCAF2;
+                    top: 0px;
+                    font-size: 0.7em;
+                    font-weight: 600;
+                }
+
+                .input {
+                    font-size: medium;
+                    font-weight: 600;
+                }
+
+                .submit {
+                    border: none;
+                    outline: none;
+                    padding: 10px;
+                    border-radius: 10px;
+                    width: 100%;
+                    color: #fff;
+                    font-size: 16px;
+                    transform: .3s ease;
+                    background-color: #15a8c9;
+                    cursor: pointer;
+                    font-weight: 600;
+                }
+
+                .submit:hover {
+                    background-color: #1DCAF2;
+                }
+
+                /* Business */
+                #business {
+
+                    .conte_image {
+                        position: relative;
+
+                        .logo {
+                            height: 120px;
+                            width: 120px;
+                            border-radius: 50%;
+                            border: 1px solid #3e3e3e;
+                        }
+
+                        label {
+                            position: absolute;
+                            transform: translate(-50%, -50%);
+                            top: 90%;
+                            right: -10%;
+
+                            span {
+                                font-size: 20px;
+                                color: #bdbdbd;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+
+                    .flex {
+                        width: 100%;
+                        @include variables.flex(center);
+
+                        label {
+                            @include variables.flex(center);
+                            width: 100%;
+
+                            .input {
+                                width: 90%;
+                            }
+
+                            .input:focus+span,
+                            .input:valid+span {
+                                color: #1DCAF2;
+                                top: 1px;
+                                left: 25px;
+                                font-size: 0.7em;
+                                font-weight: 600;
+                            }
+                        }
+
+                        .information {
+                            width: 90%;
+                            height: 100px;
+                            padding: 10px;
+                            border-radius: 10px;
+                            background-color: #333;
+                            color: #fff;
+                            outline: none;
+                            border: 1px solid rgba(105, 105, 105, 0.397);
+                            resize: none;
+                        }
+                    }
+                }
+
+                /* Redes Sociales */
+            }
+
+            .container_networs {
+                background-color: #1a1a1a;
+                height: 90%;
+                width: 90%;
+                border-radius: 10px;
+                @include variables.align(start, space-between);
+
+                .networs,
+                .my_networs {
+                    height: 100%;
+                    padding: 10px;
+                    box-sizing: border-box;
+                }
+
+                .networs {
+                    width: 30%;
+                    @include variables.align(start, center);
+                    border-left: 1px solid rgb(180, 180, 180);
+                }
+
+                .my_networs {
+                    width: 70%;
+
+                }
+            }
         }
     }
 }

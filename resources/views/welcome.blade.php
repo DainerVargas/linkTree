@@ -14,6 +14,7 @@
 
     <title>Blue Eyes</title>
 </head>
+@livewireStyles
 
 <body>
     <main class="main">
@@ -21,7 +22,7 @@
             <span class="material-symbols-outlined icono-config" id="toggleLogin">settings</span>
 
             <div class="conte_login" id="loginCard">
-                <a href="{{route('login')}}">
+                <a href="{{ route('login') }}">
                     <span class="material-symbols-outlined">login</span>
                     Iniciar sesión
                 </a>
@@ -82,5 +83,6 @@
     </script>
 
 </body>
+@livewireScripts
 
 </html>

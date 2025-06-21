@@ -488,9 +488,9 @@
         @include variables.flex(center);
 
         .form {
-            display: flex;
+            @include variables.flex(center);
             flex-direction: column;
-            gap: 12px;
+            gap: 30px;
             background-color: #1f1f1f;
             padding: 20px 30px;
             box-sizing: border-box;
@@ -509,104 +509,144 @@
                 }
             }
 
-            .error,
-            .errors {
-                position: absolute;
-                left: 0%;
-                text-align: center;
+            .container {
+                @include variables.flex(center);
+                flex-direction: column;
                 width: 100%;
-                font-size: 12px;
-                color: red;
-            }
+                gap: 30px;
 
-            .errors{
-                top: 45.3%;
+                .conteInput {
+                    position: relative;
+                    width: 100%;
+                    height: 50px;
 
-            }
-            
-            .error{
-                top: 71.5%;
-            }
+                    .icono {
+                        position: absolute;
+                        top: 50%;
+                        left: 20px;
+                        font-size: 20px;
+                        transform: translate(-50%, -50%);
+                        color: #979797;
+                    }
 
-            .flex-column>label {
-                color: #f1f1f1;
-                font-weight: 600;
-            }
+                    .input {
+                        width: 100%;
+                        height: 100%;
+                        background-color: #2b2b2b;
+                        border: 1.5px solid #525252;
+                        border-radius: 10px;
+                        padding: 0 0 0 40px;
+                        box-sizing: border-box;
+                        color: #f1f1f1;
+                        font-size: 17px;
+                        outline: none;
+                        transition: 0.2s ease-in-out;
 
-            .inputForm {
-                border: 1.5px solid #333;
-                border-radius: 10px;
-                height: 50px;
-                display: flex;
-                align-items: center;
-                padding-left: 10px;
-                transition: 0.2s ease-in-out;
-                background-color: #2b2b2b;
-            }
+                        &::placeholder {
+                            color: transparent;
+                        }
 
-            .input {
-                margin-left: 10px;
-                border-radius: 10px;
-                border: none;
-                width: 100%;
-                height: 100%;
-                background-color: #2b2b2b;
-                color: #f1f1f1;
-            }
+                        &:focus {
+                            border-color: #05CCD1;
+                        }
+                    }
 
-            .input:focus {
-                outline: none;
-            }
+                    .label {
+                        position: absolute;
+                        left: 40px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        color: #979797;
+                        pointer-events: none;
+                        transition: 0.2s ease all;
+                        font-size: 16px;
+                    }
 
-            .inputForm:focus-within {
-                border: 1.5px solid #1DCAF2;
-            }
+                    .input:focus+.label,
+                    .input:not(:placeholder-shown)+.label {
+                        top: -14px;
+                        left: 35px;
+                        font-size: 16px;
+                        font-weight: 600;
+                        color: #05CCD1;
+                    }
 
-            .flex-row {
-                flex-direction: row;
-                @include variables.flex(space-between);
-                gap: 10px;
-            }
+                   /*  @media (max-width: 1074px) {
+                        .input {
+                            border: 1.5px solid #ffffff;
+                            padding: 0 0 0 50px;
+                            box-sizing: border-box;
+                        }
+                    } */
+                }
 
-            .flex-row>div>label {
-                font-size: 14px;
-                color: #f1f1f1;
-                font-weight: 400;
-            }
 
-            .span {
-                font-size: 14px;
-                margin-left: 5px;
-                color: #1DCAF2;
-                font-weight: 500;
-                cursor: pointer;
-            }
-
-            .button-submit {
-                margin: 20px 0 10px 0;
-                background-color: #1DCAF2;
-                border: none;
-                color: white;
-                font-size: 15px;
-                font-weight: 600;
-                border-radius: 10px;
-                height: 50px;
-                width: 100%;
-                cursor: pointer;
-            }
-
-            .p {
-                text-align: center;
-                color: #f1f1f1;
-                font-size: 14px;
-                margin: 5px 0;
             }
         }
     }
 
-    footer {
-        padding: 10px;
-        box-sizing: border-box;
-        font-size: 14px;
+
+    .flex-row {
+        @include variables.flex(space-between);
+        width: 100%;
     }
+
+    .flex-row>div>label {
+        font-size: 14px;
+        color: #f1f1f1;
+        font-weight: 400;
+    }
+
+    .span {
+        font-size: 14px;
+        margin-left: 5px;
+        color: #1DCAF2;
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+    .error,
+    .errors {
+        position: absolute;
+        left: 0%;
+        text-align: center;
+        width: 100%;
+        font-size: 12px;
+        color: rgb(250, 70, 70);
+    }
+
+    .errors {
+        top: 44%;
+
+    }
+
+    .error {
+        top: 69.5%;
+    }
+
+    .button-submit {
+        background-color: #1DCAF2;
+        border: none;
+        color: white;
+        font-size: 15px;
+        font-weight: 600;
+        border-radius: 10px;
+        height: 50px;
+        width: 100%;
+        cursor: pointer;
+    }
+
+    .p {
+        text-align: center;
+        color: #f1f1f1;
+        font-size: 14px;
+        margin: 5px 0;
+    }
+}
+
+
+footer {
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 14px;
 }
